@@ -2,13 +2,13 @@ import { useState, useEffect } from "react"
 import { Twitter, Facebook, Linkedin, Copy, RefreshCw } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { useToast } from "@/hooks/use-toast"
+//import { useToast } from "@/hooks/use-toast"
 import { quotes } from "./quotes"
 
 export default function QuoteOfTheDay() {
   const [quote, setQuote] = useState<{ text: string; author: string } | null>(null)
   const [fadeIn, setFadeIn] = useState(true)
-  const { toast } = useToast()
+  //const { toast } = useToast()
 
   // Get a random quote
   const getRandomQuote = () => {
@@ -48,10 +48,10 @@ export default function QuoteOfTheDay() {
   const copyToClipboard = () => {
     if (!quote) return
     navigator.clipboard.writeText(`"${quote.text}" - ${quote.author}`)
-    toast({
-      title: "Copied to clipboard",
-      description: "Quote has been copied to your clipboard",
-    })
+    // toast({
+    //   title: "Copied to clipboard",
+    //   description: "Quote has been copied to your clipboard",
+    // })
   }
 
   if (!quote) {
@@ -59,8 +59,8 @@ export default function QuoteOfTheDay() {
   }
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 p-4">
-      <Card className="w-full max-w-2xl bg-gray-800/50 border-gray-700 backdrop-blur-sm">
+    <div className="flex items-center justify-center min-h-screen min-w-screen bg-gradient-to-br from-gray-900 to-gray-800 p-4">
+     <Card className="w-full max-w-2xl bg-gray-800/50 border-gray-700 backdrop-blur-sm">
         <CardContent className="p-6 md:p-8">
           <div className={`transition-opacity duration-300 ${fadeIn ? "opacity-100" : "opacity-0"}`}>
             <div className="mb-8 text-center">
@@ -120,7 +120,7 @@ export default function QuoteOfTheDay() {
             </div>
           </div>
         </CardContent>
-      </Card>
+      </Card> 
     </div>
   )
 }
