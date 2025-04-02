@@ -59,69 +59,67 @@ export default function QuoteOfTheDay() {
   }
 
   return (
-    <div className="flex items-center justify-center min-h-screen min-w-screen bg-gradient-to-br from-gray-900 to-gray-800 p-4">
-     <Card className="w-full max-w-2xl bg-gray-800/50 border-gray-700 backdrop-blur-sm">
-        <CardContent className="p-6 md:p-8">
-          <div className={`transition-opacity duration-300 ${fadeIn ? "opacity-100" : "opacity-0"}`}>
-            <div className="mb-8 text-center">
-              <h1 className="text-2xl md:text-3xl font-bold text-white mb-2">Quote of the Day</h1>
-              <div className="h-1 w-20 bg-purple-500 mx-auto rounded-full"></div>
-            </div>
+    <Card className="w-full max-w-2xl bg-gray-800/50 border-gray-700 backdrop-blur-sm">
+      <CardContent className="p-6 md:p-8">
+        <div className={`transition-opacity duration-300 ${fadeIn ? "opacity-100" : "opacity-0"}`}>
+          <div className="mb-8 text-center">
+            <h1 className="text-2xl md:text-3xl font-bold text-white mb-2">Quote of the Day</h1>
+            <div className="h-1 w-20 bg-purple-500 mx-auto rounded-full"></div>
+          </div>
 
-            <div className="mb-8 text-center">
-              <blockquote className="text-xl md:text-2xl text-gray-100 italic mb-4">"{quote.text}"</blockquote>
-              <cite className="text-lg text-purple-300 font-medium">— {quote.author}</cite>
-            </div>
+          <div className="mb-8 text-center">
+            <blockquote className="text-xl md:text-2xl text-gray-100 italic mb-4">"{quote.text}"</blockquote>
+            <cite className="text-lg text-purple-300 font-medium">— {quote.author}</cite>
+          </div>
 
-            <div className="flex flex-col space-y-4">
-              <div className="flex justify-center space-x-3">
-                <Button
-                  variant="outline"
-                  size="icon"
-                  className="rounded-full bg-transparent border-gray-600 hover:bg-gray-700 hover:text-purple-400"
-                  onClick={shareOnTwitter}
-                >
-                  <Twitter className="h-5 w-5" />
-                  <span className="sr-only">Share on Twitter</span>
-                </Button>
-                <Button
-                  variant="outline"
-                  size="icon"
-                  className="rounded-full bg-transparent border-gray-600 hover:bg-gray-700 hover:text-purple-400"
-                  onClick={shareOnFacebook}
-                >
-                  <Facebook className="h-5 w-5" />
-                  <span className="sr-only">Share on Facebook</span>
-                </Button>
-                <Button
-                  variant="outline"
-                  size="icon"
-                  className="rounded-full bg-transparent border-gray-600 hover:bg-gray-700 hover:text-purple-400"
-                  onClick={shareOnLinkedIn}
-                >
-                  <Linkedin className="h-5 w-5" />
-                  <span className="sr-only">Share on LinkedIn</span>
-                </Button>
-                <Button
-                  variant="outline"
-                  size="icon"
-                  className="rounded-full bg-transparent border-gray-600 hover:bg-gray-700 hover:text-purple-400"
-                  onClick={copyToClipboard}
-                >
-                  <Copy className="h-5 w-5" />
-                  <span className="sr-only">Copy to clipboard</span>
-                </Button>
-              </div>
-
-              <Button onClick={getRandomQuote} className="mx-auto bg-purple-600 hover:bg-purple-700 text-white">
-                <RefreshCw className="mr-2 h-4 w-4" />
-                New Quote
+          <div className="flex flex-col space-y-4">
+            <div className="flex justify-center space-x-3">
+              <Button
+                variant="outline"
+                size="icon"
+                className="rounded-full border-gray-600 hover:bg-gray-700 hover:text-purple-400"
+                onClick={shareOnTwitter}
+              >
+                <Twitter className="h-5 w-5" />
+                <span className="sr-only">Share on Twitter</span>
+              </Button>
+              <Button
+                variant="outline"
+                size="icon"
+                className="rounded-full border-gray-600 hover:bg-gray-700 hover:text-purple-400"
+                onClick={shareOnFacebook}
+              >
+                <Facebook className="h-5 w-5" />
+                <span className="sr-only">Share on Facebook</span>
+              </Button>
+              <Button
+                variant="outline"
+                size="icon"
+                className="rounded-full  border-gray-600 hover:bg-gray-700 hover:text-purple-400"
+                onClick={shareOnLinkedIn}
+              >
+                <Linkedin className="h-5 w-5" />
+                <span className="sr-only">Share on LinkedIn</span>
+              </Button>
+              <Button
+                variant="outline"
+                size="icon"
+                className="rounded-full  border-gray-600 hover:bg-gray-700 hover:text-purple-400"
+                onClick={copyToClipboard}
+              >
+                <Copy className="h-5 w-5" />
+                <span className="sr-only">Copy to clipboard</span>
               </Button>
             </div>
+
+            <Button onClick={getRandomQuote} className="mx-auto bg-purple-600 hover:bg-purple-800 text-white">
+              <RefreshCw className="mr-2 h-4 w-4" />
+              New Quote
+            </Button>
           </div>
-        </CardContent>
-      </Card> 
-    </div>
+        </div>
+      </CardContent>
+    </Card> 
   )
 }
 

@@ -16,4 +16,3 @@ export const quotes = [
     author: "Andrew Tate",
   },
 ]
-
