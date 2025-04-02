@@ -1,13 +1,14 @@
 import type { Config } from "tailwindcss"
 
 const config = {
-  darkMode: ["class"],
+  //darkMode: ["class"],
   content: [
     "./pages/**/*.{ts,tsx}",
     "./components/**/*.{ts,tsx}",
     "./app/**/*.{ts,tsx}",
-    "./*.{ts,tsx}",
-    "*.{js,ts,jsx,tsx,mdx}",
+    "./src/**/*.{ts,tsx}",
+    "./*.{ts,tsx,jpg}",
+    "*.{js,ts,jsx,tsx,mdx,jpg}",
   ],
   prefix: "",
   theme: {
@@ -88,6 +89,7 @@ const config = {
       },
     },
   },
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
   plugins: [require("tailwindcss-animate")],
 } satisfies Config
 

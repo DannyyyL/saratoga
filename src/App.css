@@ -5,6 +5,15 @@
   padding: 0;
 }
 
+/* Add custom background class */
+.bg-quote-luke {
+  background-image: url('/assets/NateBelmar.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Rest of your original CSS */
 .logo {
   height: 6em;
   padding: 1.5em;
