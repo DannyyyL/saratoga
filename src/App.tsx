@@ -32,7 +32,7 @@ function App() {
           onNewQuote={getRandomQuote} 
         />
       </main>
-      
+
       <footer className="py-3 px-4 text-center text-gray-400 bg-gray-800/60 
       backdrop-blur-sm border-t border-gray-700">
         <p className="text-sm"> Satirical </p>

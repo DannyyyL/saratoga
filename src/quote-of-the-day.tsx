@@ -51,7 +51,7 @@ export default function QuoteOfTheDay({ quote, fadeIn, onNewQuote }: QuoteProps)
         <div className={`transition-opacity duration-300 ${fadeIn ? "opacity-100" : "opacity-0"}`}>
           <div className="mb-8 text-center">
             <h1 className="text-2xl md:text-3xl font-bold text-white mb-2">Quote of the Day</h1>
-          <div className="h-1 w-20 bg-purple-500 mx-auto rounded-full"></div>
+          <div className="h-1 w-63 bg-purple-500 mx-auto rounded-full"></div>
         </div>
 
         <div className="mb-8 text-center">
