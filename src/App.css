@@ -5,9 +5,30 @@
   padding: 0;
 }
 
-/* Add custom background class */
 .bg-quote-luke {
-  background-image: url('/assets/NateBelmar.jpg');
+  background-image: url('/assets/LukeBelmar.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.bg-quote-nate {
+  background-image: url('/assets/NateBelmar.avif');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+.bg-quote-andrew {
+  background-image: url('/assets/AndrewTate.jfif');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.bg-quote-andy {
+  background-image: url('/assets/AndyElliott.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

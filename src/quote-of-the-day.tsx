@@ -98,8 +98,7 @@ export default function QuoteOfTheDay({ quote, fadeIn, onNewQuote }: QuoteProps)
               <span className="sr-only">Copy to clipboard</span>
             </Button>
           </div>
-
-          <Button onClick={onNewQuote} className="mx-auto bg-purple-600 hover:bg-purple-800 text-white">
+          <Button onClick={onNewQuote} className="mt-2 mx-auto bg-purple-600 hover:bg-purple-800 text-white">
             <RefreshCw className="mr-2 h-4 w-4" />
             New Quote
           </Button>

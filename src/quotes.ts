@@ -8,19 +8,19 @@ export const quotes = [
   {
     text: "If not we are gonna have to bounce brother",
     author: "Nate Belmar",
-    bg: "bg-quote-luke",
+    bg: "bg-quote-nate",
     didTheySayIt: true,
   },
   {
     text: "What color is your Bugatti?",
     author: "Andrew Tate",
-    bg: "bg-quote-luke",
+    bg: "bg-quote-andrew",
     didTheySayIt: true,
   },
   {
     text: "Steve",
     author: "Andrew Tate",
-    bg: "bg-quote-luke",
+    bg: "bg-quote-andrew",
     didTheySayIt: true,
   },
   {
@@ -38,7 +38,7 @@ export const quotes = [
   {
     text: "If you guys work for me, six pack or your fired",
     author: "Andy Elliott",
-    bg: "bg-quote-luke",
+    bg: "bg-quote-andy",
     didTheySayIt: true,
   },
 ]
