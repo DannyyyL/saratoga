@@ -1,6 +1,3 @@
-// import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
 import './App.css'
 import QuoteOfTheDay from './quote-of-the-day'
 import { useState, useEffect } from "react"
@@ -13,7 +10,14 @@ function App() {
   const getRandomQuote = () => {
     setFadeIn(false)
     setTimeout(() => {
-      const randomIndex = Math.floor(Math.random() * quotes.length)
+      let newQuote;
+      let randomIndex;
+      do{
+        randomIndex = Math.floor(Math.random() * quotes.length)
+        newQuote = quotes[randomIndex]
+      }
+      while (quote?.text === newQuote.text)
+
       setQuote(quotes[randomIndex])
       setFadeIn(true)
     }, 300)
