@@ -46,7 +46,7 @@ export default function QuoteOfTheDay({ quote, fadeIn, onNewQuote }: QuoteProps)
   }
 
   return (
-    <Card className="w-full max-w-2xl bg-gray-800/50 border-gray-700 backdrop-blur-sm">
+    <Card className="w-full max-w-2xl bg-gray-800/50 border-gray-700 backdrop-blur-sm border-t-0 border-b-0">
       <CardContent className="p-6 md:p-8">
         <div className={`transition-opacity duration-300 ${fadeIn ? "opacity-100" : "opacity-0"}`}>
           <div className="mb-8 text-center">
@@ -98,10 +98,20 @@ export default function QuoteOfTheDay({ quote, fadeIn, onNewQuote }: QuoteProps)
               <span className="sr-only">Copy to clipboard</span>
             </Button>
           </div>
+
           <Button onClick={onNewQuote} className="mt-2 mx-auto bg-purple-600 hover:bg-purple-800 text-white">
             <RefreshCw className="mr-2 h-4 w-4" />
             New Quote
           </Button>
+
+          <div className="mt-2 mx-auto space-x-4">
+            <Button className="bg-purple-600 hover:bg-purple-800 text-white">
+              Real
+            </Button>
+            <Button className="bg-purple-600 hover:bg-purple-800 text-white">
+              Fake
+            </Button>
+          </div>
         </div>
       </div>
     </CardContent>
