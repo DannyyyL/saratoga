@@ -6,6 +6,7 @@ import { quotes } from "./quotes"
 function App() {
   const [quote, setQuote] = useState<{ text: string; author: string; bg:string } | null>(null)
   const [fadeIn, setFadeIn] = useState(true)
+  
   // Get a random quote
   const getRandomQuote = () => {
     setFadeIn(false)
