@@ -1,7 +1,7 @@
 import { Twitter, Facebook, Linkedin, Copy, RefreshCw } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { useState, useEffect } from "react"
+import { useState } from "react"
 //import { useToast } from "@/hooks/use-toast"
 
 interface QuoteProps {
@@ -10,15 +10,16 @@ interface QuoteProps {
   onNewQuote: () => void;
 }
 
-export default function QuoteOfTheDay({ quote, fadeIn, onNewQuote }: QuoteProps) { 
+export default function QuoteOfTheDay({ quote, fadeIn, onNewQuote }: QuoteProps) {
   //const { toast } = useToast()
-  const [isFakeQuote, setIsFakeQuote] = useState(false);
-  useEffect(() => {
-    setIsFakeQuote(!quote.real)
-  }, [quote])
+  const [userGuess, setUserGuess] = useState<boolean | null>(null);
 
-  const markReal = () => setIsFakeQuote(false);
-  const markFake = () => setIsFakeQuote(true);
+  const handleGuessReal = () => {
+    if (userGuess === null) setUserGuess(true);
+  };
+  const handleGuessFake = () => {
+    if (userGuess === null) setUserGuess(false);
+  };
 
   // Share functions
   const shareOnTwitter = () => {
@@ -107,29 +108,49 @@ export default function QuoteOfTheDay({ quote, fadeIn, onNewQuote }: QuoteProps)
             </Button>
           </div>
 
-          <Button onClick={onNewQuote} className="mt-2 mx-auto bg-purple-600 hover:bg-purple-800 text-white">
+          <Button
+            onClick={() => {
+              setUserGuess(null);
+              onNewQuote();
+            }}
+            className="mt-2 mx-auto bg-purple-600 hover:bg-purple-800 text-white"
+          >
             <RefreshCw className="mr-2 h-4 w-4" />
             New Quote
           </Button>
 
           <div className="mt-2 mx-auto space-x-4">
-            <Button 
-            onClick={markReal} 
-            className={`${isFakeQuote ? 'bg-purple-600' : 'bg-green-600'}
-            ${isFakeQuote ? 'hover:bg-purple-800' : 'hover:bg-green-800'} text-white`}>
+            <Button
+              onClick={handleGuessReal}
+              disabled={userGuess !== null}
+              className={
+                userGuess === null
+                  ? 'bg-purple-600 hover:bg-purple-800 text-white'
+                  : quote.real
+                  ? 'bg-green-600 hover:bg-green-600 text-white'
+                  : 'bg-red-600 hover:bg-red-600 text-white'
+              }
+            >
               Real Quote
             </Button>
-            <Button 
-            onClick={markFake} 
-            className={`${!isFakeQuote ? 'bg-purple-600' : 'bg-green-600'}
-            ${!isFakeQuote ? 'hover:bg-purple-800' : 'hover:bg-green-800'} text-white`}>
+            <Button
+              onClick={handleGuessFake}
+              disabled={userGuess !== null}
+              className={
+                userGuess === null
+                  ? 'bg-purple-600 hover:bg-purple-800 text-white'
+                  : !quote.real
+                  ? 'bg-green-600 hover:bg-green-600 text-white'
+                  : 'bg-red-600 hover:bg-red-600 text-white'
+              }
+            >
               Fake Quote
             </Button>
           </div>
         </div>
       </div>
     </CardContent>
-  </Card> 
+  </Card>
   )
 }
 
