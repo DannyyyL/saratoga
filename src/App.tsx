@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import { quotes } from "./quotes"
 
 function App() {
-  const [quote, setQuote] = useState<{ text: string; author: string; bg:string } | null>(null)
+  const [quote, setQuote] = useState<{ text: string; author: string; bg:string; real:boolean } | null>(null)
   const [fadeIn, setFadeIn] = useState(true)
   
   // Get a random quote
@@ -32,7 +32,7 @@ function App() {
     <div className={`flex flex-col min-h-screen w-full ${quote?.bg || 'bg-gray-900'}`}>
       <main className="flex-grow flex items-center justify-center p-4">
         <QuoteOfTheDay 
-          quote={quote || { text: "", author: "" }} 
+          quote={quote || { text: "", author: "", real:false }} 
           fadeIn={fadeIn} 
           onNewQuote={getRandomQuote} 
         />

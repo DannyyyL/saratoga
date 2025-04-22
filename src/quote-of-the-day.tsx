@@ -1,16 +1,28 @@
 import { Twitter, Facebook, Linkedin, Copy, RefreshCw } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
+import { useState } from "react"
 //import { useToast } from "@/hooks/use-toast"
 
 interface QuoteProps {
-  quote: { text: string, author: string };
+  quote: { text: string, author: string, real:boolean };
   fadeIn: boolean;
   onNewQuote: () => void;
 }
 
-export default function QuoteOfTheDay({ quote, fadeIn, onNewQuote }: QuoteProps) {
+export default function QuoteOfTheDay({ quote, fadeIn, onNewQuote }: QuoteProps) { 
   //const { toast } = useToast()
+  const [isFakeQuote, setIsFakeQuote] = useState(false);
+
+  const isFake = () => {
+    if(!(quote.real)) {
+      setIsFakeQuote(false)
+    }
+    else{
+      setIsFakeQuote(true)
+    }
+    console.log("This is a fake quote!")
+  }
 
   // Share functions
   const shareOnTwitter = () => {
@@ -105,11 +117,15 @@ export default function QuoteOfTheDay({ quote, fadeIn, onNewQuote }: QuoteProps)
           </Button>
 
           <div className="mt-2 mx-auto space-x-4">
-            <Button className="bg-purple-600 hover:bg-purple-800 text-white">
-              Real
+            <Button 
+            onClick={isFake} 
+            className={`${isFakeQuote ? 'bg-purple-600' : 'bg-green-600'} hover:bg-purple-800 text-white`}>
+              Real Quote
             </Button>
-            <Button className="bg-purple-600 hover:bg-purple-800 text-white">
-              Fake
+            <Button 
+            onClick={isFake} 
+            className={`${isFakeQuote ? 'bg-purple-600' : 'bg-green-600'} bg-purple-600 hover:bg-purple-800 text-white`}>
+              Fake Quote
             </Button>
           </div>
         </div>
