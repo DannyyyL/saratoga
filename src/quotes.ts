@@ -41,7 +41,6 @@ export const quotes = [
     bg: "bg-quote-andy",
     real: true,
   },
-  //Fake quotes
   {
     text: "I meditate with my Bugatti engine running. Vibration matters.",
     author: "Andrew Tate",
@@ -84,5 +83,16 @@ export const quotes = [
     bg: "bg-quote-nate",
     real: false,
   },
-  
+  {
+    text: "Reflect comes from the reflection of the mirror.",
+    author: "Luke Belmar",
+    bg: "bg-quote-luke",
+    real: true,
+  },
+  {
+    text: "You only need a drivers license for commerical driving.",
+    author: "Luke Belmar",
+    bg: "bg-quote-luke",
+    real: true,
+  },
 ]
