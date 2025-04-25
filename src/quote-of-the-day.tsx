@@ -113,7 +113,13 @@ export default function QuoteOfTheDay({ quote, fadeIn, onNewQuote }: QuoteProps)
               setUserGuess(null);
               onNewQuote();
             }}
-            className="mt-2 mx-auto bg-purple-600 hover:bg-purple-800 text-white"
+            disabled={userGuess === null}
+            className={`
+              mt-2 mx-auto text-white
+              ${userGuess === null
+                ? "bg-gray-600 cursor-not-allowed opacity-50"
+                : "bg-purple-600 hover:bg-purple-800"}
+            `}
           >
             <RefreshCw className="mr-2 h-4 w-4" />
             New Quote
