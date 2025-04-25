@@ -13,11 +13,16 @@ interface QuoteProps {
 export default function QuoteOfTheDay({ quote, fadeIn, onNewQuote }: QuoteProps) {
   //const { toast } = useToast()
   const [userGuess, setUserGuess] = useState<boolean | null>(null);
+  const [streak, setStreak] = useState(0);
 
   const handleGuessReal = () => {
+    if (quote.real) setStreak(streak + 1);
+    else setStreak(0);
     if (userGuess === null) setUserGuess(true);
   };
   const handleGuessFake = () => {
+    if (!(quote.real)) setStreak(streak + 1);
+    else setStreak(0);
     if (userGuess === null) setUserGuess(false);
   };
 
@@ -159,7 +164,7 @@ export default function QuoteOfTheDay({ quote, fadeIn, onNewQuote }: QuoteProps)
           <div className="bg-purple-600 p-2 rounded-full inline-flex">
             <Flame className="h-6 w-6 text-white" />
             <h1 className="mx-2 text-white">
-              0
+              {streak}
             </h1>
           </div>
         </div>
