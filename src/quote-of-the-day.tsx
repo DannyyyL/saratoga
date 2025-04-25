@@ -1,4 +1,4 @@
-import { Twitter, Facebook, Linkedin, Copy, RefreshCw } from "lucide-react"
+import { Twitter, Facebook, Linkedin, Copy, RefreshCw, Flame } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { useState } from "react"
@@ -154,6 +154,16 @@ export default function QuoteOfTheDay({ quote, fadeIn, onNewQuote }: QuoteProps)
             </Button>
           </div>
         </div>
+
+        <div className="mt-4 flex justify-center">
+          <div className="bg-purple-600 p-2 rounded-full inline-flex">
+            <Flame className="h-6 w-6 text-white" />
+            <h1 className="mx-2 text-white">
+              0
+            </h1>
+          </div>
+        </div>
+
       </div>
     </CardContent>
   </Card>
