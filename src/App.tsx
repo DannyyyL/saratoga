@@ -23,6 +23,7 @@ function App() {
       setFadeIn(true)
     }, 300)
   }
+
   // Initialize with a random quote
   useEffect(() => {
     getRandomQuote()

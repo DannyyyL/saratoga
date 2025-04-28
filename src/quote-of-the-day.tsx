@@ -1,5 +1,6 @@
 import { Twitter, Facebook, Linkedin, Copy, RefreshCw, Flame } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { AnimatedNum } from "./components/ui/animatedNum"
 import { Card, CardContent } from "@/components/ui/card"
 import { useState } from "react"
 //import { useToast } from "@/hooks/use-toast"
@@ -164,7 +165,7 @@ export default function QuoteOfTheDay({ quote, fadeIn, onNewQuote }: QuoteProps)
           <div className="bg-purple-600 p-2 rounded-full inline-flex">
             <Flame className="h-6 w-6 text-white" />
             <h1 className="mx-2 text-white">
-              {streak}
+              <AnimatedNum value={streak} springConfig={{ stiffness: 80, damping: 12 }} />
             </h1>
           </div>
         </div>
