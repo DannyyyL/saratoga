@@ -2,7 +2,9 @@ import { Twitter, Facebook, Linkedin, Copy, RefreshCw} from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { AnimatedNum } from "./components/ui/animatedNum"
 import { Card, CardContent } from "@/components/ui/card"
+import Sound from "./components/sound"
 import { useState } from "react"
+import { createRoot } from "react-dom/client"
 //import { useToast } from "@/hooks/use-toast"
 
 interface QuoteProps {
@@ -17,12 +19,23 @@ export default function QuoteOfTheDay({ quote, fadeIn, onNewQuote }: QuoteProps)
   const [streak, setStreak] = useState(0);
 
   const handleGuessReal = () => {
-    if (quote.real) setStreak(streak + 1);
+    if (quote.real) {
+      setStreak(streak + 1);
+      const soundElement = document.createElement('div');
+      document.body.appendChild(soundElement);
+      createRoot(soundElement).render(<Sound />);
+    }
     else setStreak(0);
     if (userGuess === null) setUserGuess(true);
   };
+
   const handleGuessFake = () => {
-    if (!(quote.real)) setStreak(streak + 1);
+    if (!(quote.real)) {
+      setStreak(streak + 1);
+      const soundElement = document.createElement('div');
+      document.body.appendChild(soundElement);
+      createRoot(soundElement).render(<Sound />);
+    }
     else setStreak(0);
     if (userGuess === null) setUserGuess(false);
   };
