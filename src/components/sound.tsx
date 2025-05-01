@@ -6,7 +6,7 @@ export default function Sound({correct} : {correct: boolean}) {
 
   useEffect(() => {
     const audio = correct ? correctSound.current : incorrectSound.current
-    audio.volume = 0.5 // Set volume to 50%
+    audio.volume = correct ? 0.5 : 0.1 // Set volume to 50%
     audio.currentTime=0
     audio.play().catch((error) => {
       console.error("Error playing sound:", error)
