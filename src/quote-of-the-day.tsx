@@ -19,24 +19,30 @@ export default function QuoteOfTheDay({ quote, fadeIn, onNewQuote }: QuoteProps)
   const [streak, setStreak] = useState(0);
 
   const handleGuessReal = () => {
+    const soundElement = document.createElement('div');
+    document.body.appendChild(soundElement);
     if (quote.real) {
       setStreak(streak + 1);
-      const soundElement = document.createElement('div');
-      document.body.appendChild(soundElement);
-      createRoot(soundElement).render(<Sound />);
+      createRoot(soundElement).render(<Sound correct={true} />);
     }
-    else setStreak(0);
+    else {
+      createRoot(soundElement).render(<Sound correct={false} />);
+      setStreak(0);
+    }
     if (userGuess === null) setUserGuess(true);
   };
 
   const handleGuessFake = () => {
+    const soundElement = document.createElement('div');
+    document.body.appendChild(soundElement);
     if (!(quote.real)) {
       setStreak(streak + 1);
-      const soundElement = document.createElement('div');
-      document.body.appendChild(soundElement);
-      createRoot(soundElement).render(<Sound />);
+      createRoot(soundElement).render(<Sound correct={true} />);
     }
-    else setStreak(0);
+    else {
+      createRoot(soundElement).render(<Sound correct={false} />);
+      setStreak(0);
+    }
     if (userGuess === null) setUserGuess(false);
   };
 
