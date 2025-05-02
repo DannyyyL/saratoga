@@ -95,4 +95,34 @@ export const quotes = [
     bg: "bg-quote-luke",
     real: true,
   },
+  {
+    text: "I have a lot of beef with anime",
+    author: "Nate Belmar",
+    bg: "bg-quote-nate",
+    real: true,
+  },
+  {
+    text: "I only drink water sourced from glaciers. Anything else is suboptimal.",
+    author: "Luke Belmar",
+    bg: "bg-quote-luke",
+    real: false,
+  },
+  {
+    text: "If your car doesn’t have wings, you’re not thinking big enough.",
+    author: "Andrew Tate",
+    bg: "bg-quote-andrew",
+    real: false,
+  },
+  {
+    text: "I train my team by making them run marathons in VR.",
+    author: "Andy Elliott",
+    bg: "bg-quote-andy",
+    real: false,
+  },
+  {
+    text: "The stock market is just a multiplayer game of Monopoly.",
+    author: "Luke Belmar",
+    bg: "bg-quote-luke",
+    real: false,
+  },
 ]
